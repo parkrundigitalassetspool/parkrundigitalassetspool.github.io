@@ -54,6 +54,13 @@ html, body, body * { font-family: 'Montserrat', sans-serif !important; font-weig
 }
 
 @media (max-width: 600px) {
+  .topbar { height: auto; min-height: 68px; padding: 16px 6vw; gap: 10px; flex-wrap: wrap; }
+  nav { width: 100%; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 10px 8px; align-items: center; padding-top: 6px; }
+  nav a:not(.nav-pill) { display: block !important; grid-row: 1; }
+  nav a:nth-child(1) { grid-column: 1; }
+  nav a:nth-child(2) { grid-column: 2; text-align: right; }
+  nav .lang-toggle { grid-column: 1; grid-row: 2; justify-self: start; }
+  nav .nav-pill { grid-column: 2; grid-row: 2; justify-self: end; }
   .topbar { height: auto; min-height: 68px; padding: 16px 6vw; gap: 14px; }
   .brand { min-width: 0; gap: 6px; }
   .brand-wordmark { font-size: 21px; }
