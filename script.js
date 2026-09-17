@@ -39,8 +39,9 @@ search.addEventListener('input', (event) => {
   const query = event.target.value.trim().toLowerCase();
   let visible = 0;
   cards.forEach((card) => {
-    const matches = card.textContent.toLowerCase().includes(query);
-    card.hidden = !matches;
+    const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+    const matches = title.includes(query);
+    card.style.display = matches ? '' : 'none';
     if (matches) visible += 1;
   });
   empty.style.display = visible ? 'none' : 'block';
