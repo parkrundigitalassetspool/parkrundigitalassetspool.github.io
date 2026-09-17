@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
 /* Screenshot-matched group layout and palette */
 :root {
   --screenshot-orange: #ff9826;
@@ -9,7 +11,11 @@
 .brand-wordmark { color: #f58220; font-size: 25px; font-weight: 700; letter-spacing: -.08em; line-height: 1; }
 .brand-country { color: #343c83; font: 500 9px 'DM Mono', monospace; letter-spacing: .08em; margin-left: -4px; align-self: end; margin-bottom: 2px; }
 .hero { grid-template-columns: 1fr; }
-.hero-copy { max-width: 760px; }
+.hero-copy { max-width: none; position: relative; }
+.qr-card { position: absolute; top: 28%; right: 5vw; display: inline-flex; align-items: center; color: var(--ink); text-decoration: none; }
+.qr-card img { width: 122px; height: 122px; background: var(--cream); padding: 0; border-radius: 10px; }
+.qr-card strong { font-size: 13px; }
+.qr-card small { font: 10px 'DM Mono', monospace; color: var(--muted); }
 
 .groups { display: flex; flex-direction: column; gap: 28px; }
 .asset-group { border-bottom: 1px solid var(--screenshot-red); padding-bottom: 28px; }
@@ -38,8 +44,40 @@
 .asset-group:nth-child(1) .asset-card:nth-child(3) { background: var(--screenshot-indigo); }
 .asset-group:nth-child(1) .asset-card:nth-child(4) { background: var(--screenshot-red); }
 
+body, body * { font-family: 'Montserrat', sans-serif !important; font-weight: 800 !important; }
+
 @media (max-width: 900px) {
   .asset-group { display: block; }
   .asset-group h3 { width: 100%; padding: 0 0 18px; }
   .group-grid { width: 100%; margin-left: 0; }
+  .qr-card { position: static; margin-top: 28px; }
+}
+
+@media (max-width: 600px) {
+  .topbar { height: auto; min-height: 68px; padding: 16px 6vw; gap: 14px; }
+  .brand { min-width: 0; gap: 6px; }
+  .brand-wordmark { font-size: 21px; }
+  .brand-country { font-size: 8px; }
+  nav { gap: 8px; }
+  .lang-toggle { padding: 8px 9px; }
+  .nav-pill { padding: 9px 10px; font-size: 11px; white-space: nowrap; }
+  .hero { padding: 18vw 7vw 14vw; }
+  .hero h1 { font-size: 16vw; margin-top: 22px; }
+  .intro { font-size: 15px; }
+  .hero-actions { align-items: flex-start; flex-wrap: wrap; gap: 18px; margin-top: 28px; }
+  .qr-card { margin-top: 24px; }
+  .qr-card img { width: 108px; height: 108px; }
+  .library { padding: 15vw 7vw 18vw; }
+  .section-head { margin-bottom: 28px; }
+  .section-head h2 { font-size: 13vw; }
+  .search { width: 100%; }
+  .asset-group { padding-bottom: 22px; }
+  .asset-group h3 { font-size: 21px; }
+  .group-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 128px; gap: 12px; }
+  .group-grid .asset-card { height: 128px; min-height: 128px; border-radius: 22px; padding: 14px 9px; }
+  .group-grid .card-title { font-size: 15px; overflow-wrap: anywhere; }
+  .about { padding: 16vw 7vw; }
+  .about h2 { font-size: 13vw; }
+  .about p { font-size: 16px; }
+  footer { padding: 20px 7vw; font-size: 10px; }
 }
